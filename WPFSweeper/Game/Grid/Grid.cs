@@ -36,9 +36,10 @@ namespace WPFSweeper
                     {
                         CellGrid[row] = new Cell[(int)difficulty];
                     }
-                    MineLeft = (int)difficulty * (int)difficulty / 10;
+                    MineLeft = (int)difficulty * (int)difficulty / 2;
                     GenerateEmptyCells(difficulty);
                     LoadCellsToPanel();
+                    DistributeMines();
                     return;
                 }
                 //load saved game

@@ -7,4 +7,25 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Assets\Audio\cell_open.mp3" />
+    <None Remove="Assets\Audio\cell_open.wav" />
+    <None Remove="Assets\Audio\vine_boom.mp3" />
+    <None Remove="Assets\Audio\vine_boom.wav" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Assets\Image\" />
+    <Folder Include="Saved Games\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Audio\cell_open.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Audio\vine_boom.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
 </Project>

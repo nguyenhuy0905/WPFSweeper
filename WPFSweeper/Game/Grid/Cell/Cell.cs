@@ -25,37 +25,59 @@ namespace WPFSweeper
                 /// y-position of the cell
                 /// </summary>
                 public int Y { get; protected set; }
+
+                private int index;
                 /// <summary>
-                /// how many mines surround the cell
+                /// how many mines surround the cell. Setter only works if game hasn't started
                 /// </summary>
-                public int Index { get; protected set; }
+                public int Index
+                {
+                    get { return index; }
+                    set { if (!Game.HasStarted)
+                            index = value; }
+                }
+
+                private bool hasMine;
                 /// <summary>
-                /// whether the cell has mine
+                /// whether the cell has mine. Setter only work if game hasn't started
                 /// </summary>
-                public bool hasMine { get; protected set; }
+                public bool HasMine
+                {
+                    get { return hasMine; }
+                    set { if(!Game.HasStarted) hasMine = value; }
+                }
+
                 /// <summary>
                 /// whether the player has flagged the cell
                 /// </summary>
-                public bool isFlagged { get; set; }
+                public bool IsFlagged { get; set; }
                 /// <summary>
-                /// Initialize the cell. Unless loading from saves, only x and y are required
+                /// Whether the player has clicked on the cell
+                /// </summary>
+                public bool IsOpened { get; private set; }
+                /// <summary>
+                /// Initialize the cell. Unless loading from saves, only fill in x and y
                 /// </summary>
                 /// <param name="x">x-position of the cell</param>
                 /// <param name="y">y-position of the cell</param>
                 /// <param name="index">how many mines are the cell surrounded by</param>
                 /// <param name="hasMine">whether the cell contains mine</param>
                 /// <param name="isFlaged">whether the player has flagged the cell</param>
-                public Cell(int x, int y, int index = 0, bool hasMine = false, bool isFlagged = false)
+                public Cell(int x, int y, int index = 0, bool hasMine = false, bool isFlagged = false, bool isOpened = false)
                 {
                     //assigning stuff
                     this.X = x;
                     this.Y = y;
                     this.Index = index;
-                    this.hasMine = hasMine;
-                    this.isFlagged = isFlagged;
+                    this.HasMine = hasMine;
+                    this.IsFlagged = isFlagged;
+                    this.IsOpened = isOpened;
+                    this.Click += Cell_Click;
                     //format the look of the cell
                     CellFormat();
                 }
+
+                
             }
         }
     }

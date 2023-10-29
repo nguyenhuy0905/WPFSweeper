@@ -32,21 +32,24 @@ namespace WPFSweeper
         /// </summary>
         public static Difficulty difficulty { get; set; }
         /// <summary>
-        /// Whether the game is loading or not. If true, add a layer of loading screen on top
+        /// Whether the game has started or not. Modifies the behaviors of some methods
         /// </summary>
-        public bool isLoading { get; private set; }
+        public static bool HasStarted { get; private set; }
         /// <summary>
         /// The timer for the game
         /// </summary>
         public DispatcherTimer timer { get; private set; }
         public Game(Difficulty difficulty, bool newGame = true)
         {
+            //initialize all instance variables
             Game.difficulty = difficulty;
-            isLoading = true;
+            HasStarted = false;
             grid = new Grid(difficulty, newGame);
             //setup the timer
-            timer = new();
-            timer.Interval = new TimeSpan(0, 0, 1);
+            timer = new()
+            {
+                Interval = new TimeSpan(0, 0, 1)
+            };
 #pragma warning disable CS8622
             timer.Tick += new EventHandler(UpdateClock);
 #pragma warning restore 

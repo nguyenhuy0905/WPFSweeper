@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFSweeper"
         mc:Ignorable="d"
-        Title="WPFSweeper" Height="720" Width="1152">
+        Title="WPFSweeper" Height="720" Width="1152"
+        Background="LightBlue">
     <Grid>
         <TextBox Name="TimerClock"
                  VerticalAlignment="Top" HorizontalAlignment="Center"
