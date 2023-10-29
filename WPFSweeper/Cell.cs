@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace WPFSweeper
 {
@@ -14,7 +15,7 @@ namespace WPFSweeper
             /// <summary>
             /// The building block of the game: the cell
             /// </summary>
-            private partial class Cell
+            private partial class Cell : Button
             {
                 /// <summary>
                 /// x-position of the cell
@@ -46,11 +47,14 @@ namespace WPFSweeper
                 /// <param name="isFlaged">whether the player has flagged the cell</param>
                 public Cell(int x, int y, int index = 0, bool hasMine = false, bool isFlagged = false)
                 {
+                    //assigning stuff
                     this.X = x;
                     this.Y = y;
                     this.Index = index;
                     this.hasMine = hasMine;
                     this.isFlagged = isFlagged;
+                    //format the look of the cell
+                    CellFormat();
                 }
             }
         }

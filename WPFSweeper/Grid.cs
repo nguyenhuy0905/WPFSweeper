@@ -12,18 +12,12 @@ namespace WPFSweeper
         public partial class Grid
         {
             /// <summary>
-            /// The lovely grid itself
+            /// The lovely grid itself, 
+            /// The first index represents the width (X) and the second represent the height (Y)
             /// </summary>
-            private Cell[,] cellGrid
-            {
-                get { return cellGrid; }
-                set { cellGrid = new Cell[(int)difficulty, (int)difficulty]; }
-            }
+            private Cell[][] CellGrid
+            { get; set; }
 
-            /// <summary>
-            /// The difficulty of the game
-            /// </summary>
-            public Difficulty difficulty { get; private set; }
             /// <summary>
             /// Counter of how many mines are left
             /// </summary>
@@ -37,6 +31,14 @@ namespace WPFSweeper
                 //initialize the game
                 if(newGame)
                 {
+                    CellGrid = new Cell[(int)difficulty * 8 / 5][];
+                    for(int row = 0; row < CellGrid.Length; row++)
+                    {
+                        CellGrid[row] = new Cell[(int)difficulty];
+                    }
+                    MineLeft = (int)difficulty * (int)difficulty / 10;
+                    GenerateEmptyCells(difficulty);
+                    LoadCellsToPanel();
                     return;
                 }
                 //load saved game

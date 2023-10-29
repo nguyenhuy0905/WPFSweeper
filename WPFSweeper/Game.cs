@@ -17,14 +17,19 @@ namespace WPFSweeper
         /// </summary>
         public Grid grid;
         /// <summary>
-        /// The grid size represented by the difficulty
+        /// The grid height represented by the difficulty.
+        /// The corresponding widths are 1.6 times larger
         /// </summary>
         public enum Difficulty
         {
             Easy = 10,
-            Medium = 12,
-            Hard = 14
+            Medium = 15,
+            Hard = 20
         }
+        /// <summary>
+        /// The difficulty of the game
+        /// </summary>
+        public static Difficulty difficulty { get; set; }
         /// <summary>
         /// Whether the game is loading or not. If true, add a layer of loading screen on top
         /// </summary>
@@ -33,8 +38,9 @@ namespace WPFSweeper
         /// Counts the skillissue of the player
         /// </summary>
         public DateTime timer { get; private set; }
-        public Game(Difficulty difficulty, bool newGame)
+        public Game(Difficulty difficulty, bool newGame = true)
         {
+            Game.difficulty = difficulty;
             isLoading = true;
             grid = new Grid(difficulty, newGame);
         }

@@ -20,9 +20,21 @@ namespace WPFSweeper
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// This is probably due to bad code habits that I have to save this dummy.
+        /// Basically, the main window itself.
+        /// When everything else run, mainwindow has already been created so no error should ever be thrown anyways
+        /// </summary>
+        public static MainWindow main;
+        /// <summary>
+        /// The current game
+        /// </summary>
+        private Game CurrentGame;
         public MainWindow()
         {
             InitializeComponent();
+            main = this;
+            DummyTest();
         }
     }
 }
