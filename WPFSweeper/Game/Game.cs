@@ -47,7 +47,9 @@ namespace WPFSweeper
             //setup the timer
             timer = new();
             timer.Interval = new TimeSpan(0, 0, 1);
+#pragma warning disable CS8622
             timer.Tick += new EventHandler(UpdateClock);
+#pragma warning restore 
             timer.Start();
             
         }
