@@ -13,7 +13,7 @@ namespace WPFSweeper
         /// </summary>
         public partial class Saves
         {
-            
+           //TODO start implementing serialization 
         }
     }
 }

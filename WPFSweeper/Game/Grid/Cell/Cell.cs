@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
@@ -33,7 +34,7 @@ namespace WPFSweeper
                 public int Index
                 {
                     get { return index; }
-                    set { if (!Game.HasStarted)
+                    set { //if (!Game.HasStarted)
                             index = value; }
                 }
 
@@ -44,7 +45,8 @@ namespace WPFSweeper
                 public bool HasMine
                 {
                     get { return hasMine; }
-                    set { if(!Game.HasStarted) hasMine = value; }
+                    set {// if(!Game.HasStarted) 
+                            hasMine = value; }
                 }
 
                 /// <summary>

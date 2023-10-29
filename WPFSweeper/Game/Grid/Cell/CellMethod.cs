@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Media;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media;
 
 namespace WPFSweeper
@@ -29,25 +31,28 @@ namespace WPFSweeper
                 
                 private void Cell_Click(object sender, System.Windows.RoutedEventArgs e)
                 {
-                    if (this.IsOpened) return;
-                    using(SoundPlayer player = new())
+                    this.Background = Brushes.Aquamarine;
+                    if(this.HasMine)
                     {
-                        this.Background = Brushes.Aquamarine;
-                    //go from Cell -> Grid -> Game -> WPFSweeper -> Assets -> Audio
-#pragma warning disable
-                    DirectoryInfo path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.
-                            GetDirectories("Assets")[0].GetDirectories("Audio")[0];
-#pragma warning restore
-                        if (this.hasMine)
+                        Task.Run(() =>
                         {
-                            player.SoundLocation = path.GetFiles("vine_boom.wav")[0].FullName;
+                            SoundPlayer player = new(MainWindow.rootDir + @"Assets\Audio\vine_boom.wav");
                             player.Play();
-                            return;
-                        }
-                        player.SoundLocation = path.GetFiles("cell_open.wav")[0].FullName;
-                        player.Play();
-                        this.Content = this.index;
-                    }                  
+                        });
+                        MessageBox.Show("Skillissue");
+                        return;
+                    }
+                    this.Content = this.Index;
+                                   
+                } 
+                /// <summary>
+                /// Guarantee and open a small no-mine area surrounding the first clicked cell
+                /// </summary>
+                /// <param name="x"></param>
+                /// <param name="y"></param>
+                private void OpenFirstArea(int x, int y)
+                {
+                    //TODO implement first area open
                 }
             }
         }

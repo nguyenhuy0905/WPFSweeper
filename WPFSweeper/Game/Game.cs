@@ -16,7 +16,7 @@ namespace WPFSweeper
         /// <summary>
         /// the grid
         /// </summary>
-        public Grid grid;
+        public static Grid grid;
         /// <summary>
         /// The grid height represented by the difficulty.
         /// The corresponding widths are 1.6 times larger
@@ -43,7 +43,7 @@ namespace WPFSweeper
         {
             //initialize all instance variables
             Game.difficulty = difficulty;
-            HasStarted = false;
+            HasStarted = true; //TODO change HasStarted default back to false once you finish testing
             grid = new Grid(difficulty, newGame);
             //setup the timer
             timer = new()

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,7 @@ namespace WPFSweeper
     //some definitions to make the code less verbose
     public partial class MainWindow
     {
+        public static string rootDir = Directory.GetCurrentDirectory() + @"\..\..\..\";
         /// <summary>
         /// Get the StackPanel of specified row
         /// </summary>

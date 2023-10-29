@@ -17,9 +17,9 @@ namespace WPFSweeper
             /// <param name="difficulty">The game's difficulty</param>
             private void GenerateEmptyCells(Difficulty difficulty)
             {
-                for(int x = 0; x < CellGrid.Length; x++)
+                for (int x = 0; x < Width; x++)
                 {
-                    for(int y = 0;  y < CellGrid[x].Length; y++)
+                    for (int y = 0; y < Height; y++)
                     {
                         Cell c = new(x, y);
                         CellGrid[x][y] = c;
@@ -31,9 +31,9 @@ namespace WPFSweeper
             /// </summary>
             private void LoadCellsToPanel()
             {
-                for(int x = 0; x < CellGrid.Length; x++)
+                for (int x = 0; x < Width; x++)
                 {
-                    for(int y = 0;  y < CellGrid[x].Length; y++)
+                    for (int y = 0; y < Height; y++)
                     {
                         MainWindow.main.GetRow(y).Children.Add(CellGrid[x][y]);
                     }
@@ -45,14 +45,14 @@ namespace WPFSweeper
             private void DistributeMines()
             {
                 Random rng = new();
-                for(int i = 0; i < MineLeft; i++) 
+                for (int i = 0; i < MineLeft; i++)
                 {
                     bool added = false;
                     int x, y;
-                    while(!added)
+                    while (!added)
                     {
-                        x = rng.Next((int)difficulty * 8 / 5);
-                        y = rng.Next((int)difficulty);
+                        x = rng.Next(Width);
+                        y = rng.Next(Height);
                         added = AddMine(x, y);
                     }
                 }
@@ -72,6 +72,12 @@ namespace WPFSweeper
                 UpdateMineSurrounding(x, y);
                 return true;
             }
+            /// <summary>
+            /// Remove the mine at specified location if possible
+            /// </summary>
+            /// <param name="x">The x-position of the mined cell</param>
+            /// <param name="y">The y-position of the mined cell</param>
+            /// <returns>True if the mine has been removed, false otherwise</returns>
             private bool RemoveMine(int x, int y)
             {
                 if (!CellGrid[x][y].HasMine) return false;
@@ -88,12 +94,32 @@ namespace WPFSweeper
             /// <param name="addMine">Whether you're removing or adding a mine</param>
             private void UpdateMineSurrounding(int x, int y, bool addMine = true)
             {
-                for(int xOff = -1; xOff <= 1; xOff++)
-                {
-                    for( int yOff = -1; yOff <= 1; yOff++)
+                int xPos, yPos;
+                NeighborCellsAction(x, y,
+                    (xPos, yPos) =>
                     {
-                        if((x + xOff >= 0 && x + xOff < (int)difficulty * 8 / 5) && (y + yOff >= 0 && y + yOff < (int)difficulty)) 
-                            CellGrid[x + xOff][y + yOff].Index += (addMine) ? 1 : -1;
+                        CellGrid[xPos][yPos].Index += (addMine) ? 1 : -1;
+                    },
+                    (xPos, yPos) =>
+                    {
+                        if (xPos >= 0 && xPos < grid.Width && yPos >= 0 && yPos < grid.Height) return true;
+                        return false;
+                    });
+            }
+            /// <summary>
+            /// Just a handy one so that I don't have to type this loop again and again and again
+            /// </summary>
+            /// <param name="x"></param>
+            /// <param name="y"></param>
+            /// <param name="action"></param>
+            /// <param name="condition"></param>
+            private static void NeighborCellsAction(int x, int y, Action<int, int> action, Func<int, int, bool> condition)
+            {
+                for(int xOff = -1; xOff <= 1;  xOff++)
+                {
+                    for(int yOff = -1; yOff <= 1; yOff++)
+                    {
+                        if (condition(x + xOff, y + yOff)) action(x + xOff, y + yOff);
                     }
                 }
             }

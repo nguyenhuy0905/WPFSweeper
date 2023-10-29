@@ -16,7 +16,7 @@ namespace WPFSweeper
         /// </summary>
         private void DummyTest()
         {
-            Game.Difficulty difficulty = Game.Difficulty.Easy;
+            Game.Difficulty difficulty = Game.Difficulty.Hard;
             LoadStackPanels((int)difficulty);
             Game testGame = new(difficulty);
             this.CurrentGame = testGame;           
