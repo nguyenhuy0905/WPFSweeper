@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Threading;
 
 namespace WPFSweeper
 {
@@ -35,14 +36,20 @@ namespace WPFSweeper
         /// </summary>
         public bool isLoading { get; private set; }
         /// <summary>
-        /// Counts the skillissue of the player
+        /// The timer for the game
         /// </summary>
-        public DateTime timer { get; private set; }
+        public DispatcherTimer timer { get; private set; }
         public Game(Difficulty difficulty, bool newGame = true)
         {
             Game.difficulty = difficulty;
             isLoading = true;
             grid = new Grid(difficulty, newGame);
+            //setup the timer
+            timer = new();
+            timer.Interval = new TimeSpan(0, 0, 1);
+            timer.Tick += new EventHandler(UpdateClock);
+            timer.Start();
+            
         }
     }
 }

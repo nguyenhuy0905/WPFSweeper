@@ -38,7 +38,7 @@ namespace WPFSweeper
                 MainStackPanel.Children.Add(sp);
             }
         }
-
+        
         
     }
 }
