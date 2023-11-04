@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WPFSweeper.Game
+namespace WPFSweeper.Grid
 {
-    public partial class Game
+    public partial class Grid
     {
     }
 }

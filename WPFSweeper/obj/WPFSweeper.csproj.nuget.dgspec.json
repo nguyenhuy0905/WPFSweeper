@@ -44,6 +44,20 @@
       "frameworks": {
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
+          "dependencies": {
+            "System.Text.Json": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
+            "xunit.assert": {
+              "target": "Package",
+              "version": "[2.6.1, )"
+            },
+            "xunit.extensibility.core": {
+              "target": "Package",
+              "version": "[2.6.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
