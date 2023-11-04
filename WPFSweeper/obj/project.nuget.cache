@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "7/6/8WAnxmLQuFUs8OS1z8y3O28ra3sS8/rQlhhLm9ROh7peKDXVZ7K6p71Li9FkN3vK8kXjZ072x65LF+Cipw==",
+  "dgSpecHash": "i+8nnSuKq5c+YjbvQzI6Z6TzSUx8tRE0mps9TdZurCNFWvUVXF3TtSbo7RkO9/45mJQKC7tx2LFh1k++8hovWw==",
   "success": true,
   "projectFilePath": "E:\\Code\\C#\\WPFSweeper\\WPFSweeper\\WPFSweeper.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\huy55\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
+    "C:\\Users\\huy55\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\huy55\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\huy55\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\huy55\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",

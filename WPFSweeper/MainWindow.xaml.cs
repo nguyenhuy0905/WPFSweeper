@@ -21,20 +21,17 @@ namespace WPFSweeper
     public partial class MainWindow : Window
     {
         /// <summary>
-        /// This is probably due to bad code habits that I have to save this dummy.
-        /// Basically, the main window itself.
-        /// When everything else run, mainwindow has already been created so no error should ever be thrown anyways
+        /// Quite literally some funky Dependency Injection </br>
+        /// In the sense that, this window instance is always created already before anything else of mine ever calls it
         /// </summary>
-        public static MainWindow main;
-        /// <summary>
-        /// The current game
-        /// </summary>
-        private Game CurrentGame;
+#pragma warning disable CS8618
+        public static MainWindow window { get; private set; }
+#pragma warning restore
+
         public MainWindow()
         {
             InitializeComponent();
-            main = this;
-            DummyTest();
+            window = this;
         }
     }
 }
