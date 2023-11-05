@@ -1,7 +1,7 @@
 # WPFSweeper
 New MineSweeper attempt of mine.
-Only run on Windows due to its fraemwork.
-Compared to oldSweeper, some clean-ups and organization is added, 
+Only run on Windows due to its framework.
+Compared to my oldSweeper, this one is a lot cleaner, kind of better documented, and has some more features.
 also some funny algorithms also.
 
 ### The funny algorithms (to be) used
