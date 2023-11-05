@@ -10,7 +10,8 @@ namespace WPFSweeper
     {
         public Game(Difficulty difficulty)
         {
-            
+            Timer = 0;
+
         }
 
         public void Begin()
@@ -21,6 +22,11 @@ namespace WPFSweeper
         public void Continue()
         {
             //TODO: Implement function to continue a saved/paused game
+        }
+
+        public void UpdateTimer()
+        {
+
         }
     }
 }

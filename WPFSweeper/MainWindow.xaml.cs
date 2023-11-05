@@ -21,10 +21,10 @@ namespace WPFSweeper
     public partial class MainWindow : Window
     {
         /// <summary>
-        /// Quite literally some funky Dependency Injection </br>
-        /// In the sense that, this window instance is always created already before anything else of mine ever calls it
+        /// Quite literally some funky Dependency Injection,
+        /// In the sense that, this window instance is always created already before anything else of this program ever calls it
         /// </summary>
-#pragma warning disable CS8618
+#pragma warning disable
         public static MainWindow window { get; private set; }
 #pragma warning restore
 

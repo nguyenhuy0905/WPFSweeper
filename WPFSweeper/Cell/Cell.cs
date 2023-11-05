@@ -5,11 +5,29 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 
-namespace WPFSweeper.Cell
+namespace WPFSweeper
 {   //all the instance variables of the Cell class
     /// <summary>
     /// The building block of the game - the mine cells
     /// </summary>
+    /// <remarks>
+    /// There are three states of the cell, <see cref="IsClicked">IsClicked</see>, <see cref="HasMine">HasMine</see> and <see cref="IsFlagged">IsFlagged</see>.
+    /// <list type="bullet">
+    ///     <item>
+    ///         <term>IsClicked</term>
+    ///         <description>If <c>true</c>, the cell is an empty <c>Cell</c> that has been clicked by the player</description>
+    ///     </item>
+    ///     <item>
+    ///         <term>HasMine</term>
+    ///         <description>If <c>true</c>, the cell contains mine in it</description>
+    ///     </item>
+    ///     <item>
+    ///         <term>IsFlagged</term>
+    ///         <description>If <c>true</c>, the player has flagged the cell</description>
+    ///     </item>
+    /// </list>
+    /// The other state, <see cref="IsChecked">IsChecked</see>, is used during the mine-distribution phase of the game.
+    /// </remarks>
     public partial class Cell : Button
     {
         /// <summary>
@@ -51,7 +69,7 @@ namespace WPFSweeper.Cell
         public bool IsClicked { get; private set; }
 
         /// <summary>
-        /// The type of cell this cell is. Used for loading saved games
+        /// The type of cell this cell is.
         /// <list type="number">
         ///     <listheader>
         ///         <term>Clicked</term>
