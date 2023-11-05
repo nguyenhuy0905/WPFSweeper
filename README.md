@@ -7,3 +7,6 @@ also some funny algorithms also.
 ### The funny algorithms (to be) used
 * Breadth First Search to open an area after the player clicks on the board for the first time.
 * Breadth First Search to detect an area surrounded with mines, and then remove some mines from there.
+### Notes
+* Some of my old commits are outdated
+* I don't use a graph node method anymore, though one commit said I do.
