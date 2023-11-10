@@ -48,7 +48,7 @@ namespace WPFSweeper
         public bool HasMine
         {
             get { return hasMine; }
-            set { 
+            internal set { 
                 hasMine = value;
             }
         }
@@ -67,6 +67,11 @@ namespace WPFSweeper
         /// Whether the cell has been clicked by the player
         /// </summary>
         public bool IsClicked { get; private set; }
+
+        /// <summary>
+        /// This cell's index
+        /// </summary>
+        public int Index { get; internal set; }
 
         /// <summary>
         /// The type of cell this cell is.

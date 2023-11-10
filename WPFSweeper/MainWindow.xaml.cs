@@ -27,11 +27,13 @@ namespace WPFSweeper
 #pragma warning disable
         public static MainWindow window { get; private set; }
 #pragma warning restore
+        private Game game { get; set; }
 
         public MainWindow()
         {
             InitializeComponent();
             window = this;
+            game = new Game(Difficulty.Easy); 
         }
     }
 }

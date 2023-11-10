@@ -12,7 +12,8 @@ namespace WPFSweeper
     /// </summary>
     /// <remarks>
     /// The creation of <c>Grid</c> depends on whether the <see cref="Game">Game</see> is new or is loaded from save. 
-    /// If an entirely new game i
+    /// If an entirely new game is loaded, the grid will also distribute mines then scan for any isolated area. If such
+    /// area exists, some of the mines causing the isolation will be redistributed
     /// </remarks>
     public partial class Grid
     {

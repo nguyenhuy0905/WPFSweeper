@@ -12,10 +12,11 @@
     <None Remove="Assets\Audio\cell_open.wav" />
     <None Remove="Assets\Audio\vine_boom.mp3" />
     <None Remove="Assets\Audio\vine_boom.wav" />
+    <None Remove="Assets\Image\flag.png" />
+    <None Remove="Assets\Image\mine.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Assets\Image\" />
     <Folder Include="Saved Games\" />
   </ItemGroup>
 
@@ -31,6 +32,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Audio\vine_boom.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Image\flag.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Image\mine.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

@@ -11,7 +11,7 @@ namespace WPFSweeper
         public Game(Difficulty difficulty)
         {
             Timer = 0;
-
+            grid = new Grid(difficulty);
         }
 
         public void Begin()
@@ -26,7 +26,7 @@ namespace WPFSweeper
 
         public void UpdateTimer()
         {
-
+            //TODO: Tick the clock
         }
     }
 }

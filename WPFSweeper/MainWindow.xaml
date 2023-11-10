@@ -19,7 +19,7 @@
             
         </TextBox>
         <StackPanel x:Name="MainStackPanel" 
-                    Orientation="Vertical" 
+                    Orientation="Horizontal" 
                     Margin="152,60,40,40" >
         
         </StackPanel>

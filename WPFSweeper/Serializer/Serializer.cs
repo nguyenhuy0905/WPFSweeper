@@ -23,7 +23,7 @@ namespace WPFSweeper
         public int Timer { get; private set; }
 
         /// <summary>
-        /// The values saved inside indicate the properties of all cells on the grid
+        /// The values saved inside indicate the properties of all <see cref="Cell">Cell</see>s in the <see cref="Grid">Grid</see>
         /// </summary>
         [JsonPropertyName("grid")]
         public int[][] Grid { get; private set; }
