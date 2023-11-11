@@ -8,24 +8,12 @@ using System.Text.Json.Serialization;
 
 namespace WPFSweeper
 {
+    /// <summary>
+    /// Saves the current game into a text file.
+    /// At first I decided to save as a .json file, but, why so complicated anyways
+    /// </summary>
     public class Serializer
-    {
-        /// <summary>
-        /// <see cref="Game">Game</see>'s difficulty
-        /// </summary>
-        [JsonPropertyName("difficulty")]
-        public Difficulty Difficulty { get; private set; }
-
-        /// <summary>
-        /// <see cref="Game.Timer">The timer</see>
-        /// </summary>
-        [JsonPropertyName("time")]
-        public int Timer { get; private set; }
-
-        /// <summary>
-        /// The values saved inside indicate the properties of all <see cref="Cell">Cell</see>s in the <see cref="Grid">Grid</see>
-        /// </summary>
-        [JsonPropertyName("grid")]
-        public int[][] Grid { get; private set; }
+    {       
+        //TODO: Implement the serializer
     }
 }

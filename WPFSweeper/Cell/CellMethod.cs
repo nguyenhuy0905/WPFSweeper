@@ -28,8 +28,49 @@ namespace WPFSweeper
             SetProperties(type);
             this.IsChecked = false;
             this.Width = this.Height = edge;
-            this.MouseLeftButtonDown += Cell_LeftClick;
-            this.MouseRightButtonDown += Cell_RightClick;
+            this.Click += LeftClick;
+            this.MouseRightButtonDown += RightClick;
+        }
+
+        /// <summary>
+        /// Triggers when left mouse button is clicked.
+        /// </summary>
+        /// <remarks>
+        /// There are a few cases for the click:
+        /// <list type="bullet">
+        ///     <item>
+        ///         <term>If the Cell has mine</term>
+        ///         <description>You've got skillissue. Throw a loss message and escape the game</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>If the cell has index 0</term>
+        ///         <description>Open its neighboring cells also</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>If the cell is flagged</term>
+        ///         <description>Do nothing</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>If the cell has index from 1 to 7</term>
+        ///         <description>Open itself only</description>
+        ///     </item>
+        /// </list>
+        /// </remarks>
+        private void LeftClick(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("left");
+        }
+
+        /// <summary>
+        /// Triggers when right mouse button is clicked.
+        /// </summary>
+        /// <remarks>
+        /// Simply, flips the IsFlagged property. If it's true then it's now false, if it's false then it's true.
+        /// Maybe I will add a question-mark sign later
+        /// </remarks>
+        private void RightClick(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("right");
         }
 
         /// <summary>
@@ -63,41 +104,7 @@ namespace WPFSweeper
                     break;
             }
         }
-        /// <summary>
-        /// Left click event of the <c>Cell</c>
-        /// </summary>
-        private void Cell_LeftClick(object sender, MouseButtonEventArgs e)
-        {
-            /*
-             TODO: Implement LeftClick event to the cell.
-             The LeftClick event has a few cases:
-             If the game has yet to start (or, this is the first cell to be clicked), the grid should start distributing mines,
-             and mark some of this cell's neighbors as mine-free.
-             If the cell is flagged, do nothing.
-             If the cell is mined, show all other mines and a fail message.
-             Else, open the cell. If the cell's index is 0, open up its neighbors as well. Otherwise, display its index.
-             */
-            //TODO: After I have implemented a start method, write the start action
-            if (this.IsFlagged) return;
-            if(this.HasMine)
-            {
-                MessageBox.Show("SkillIssue");
-                return;
-            }
-            this.Content = this.Index;
-        }
 
-        /// <summary>
-        /// Right click event of the <c>Cell</c>
-        /// </summary>
-        private void Cell_RightClick(object sender, MouseButtonEventArgs e)
-        {
-            /*
-             * TODO: Implement RightClick event to the cell
-             * Right click has 2 cases:
-             * If the cell is flagged, remove the flag
-             * Otherwise, flag the cell
-             */
-        }
+        
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 
 namespace WPFSweeper
 {   //all the instance variables of the Cell class
@@ -53,10 +54,26 @@ namespace WPFSweeper
             }
         }
 
+        private bool isFlagged;
         /// <summary>
-        /// Whether the player has flagged the cell
+        /// Whether the player flags this
         /// </summary>
-        public bool IsFlagged { get; set; }
+        public bool IsFlagged
+        {
+            get { return isFlagged; }
+            set { 
+                isFlagged = value;
+                if(value) this.Content = new Image()
+                {
+                    Source = new BitmapImage()
+                    {
+                        UriSource = new Uri(@"pack://application:,,,/WPFSweeper;Assets/Image/mine.png")
+                    }
+                };
+                if (!value) this.Content = "";
+                }
+        }
+
 
         /// <summary>
         /// Path-finding, whether the cell has been checked

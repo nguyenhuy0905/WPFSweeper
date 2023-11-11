@@ -80,7 +80,7 @@ namespace WPFSweeper
                 foreach (Cell neighbor in neighbors)
                 {
                     neighbor.Index++;
-                    if(!neighbor.HasMine) neighbor.Content = neighbor.Index;
+                    //if(!neighbor.HasMine) neighbor.Content = neighbor.Index;
                 }
             }
         }
