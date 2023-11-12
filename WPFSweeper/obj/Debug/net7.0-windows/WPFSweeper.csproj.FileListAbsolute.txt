@@ -10,8 +10,6 @@ E:\Code\C#\WPFSweeper\WPFSweeper\obj\Debug\net7.0-windows\WPFSweeper_MarkupCompi
 E:\Code\C#\WPFSweeper\WPFSweeper\obj\Debug\net7.0-windows\MainWindow.baml
 E:\Code\C#\WPFSweeper\WPFSweeper\obj\Debug\net7.0-windows\WPFSweeper.g.resources
 E:\Code\C#\WPFSweeper\WPFSweeper\obj\Debug\net7.0-windows\WPFSweeper.GeneratedMSBuildEditorConfig.editorconfig
-E:\Code\C#\WPFSweeper\WPFSweeper\obj\Debug\net7.0-windows\WPFSweeper.AssemblyInfoInputs.cache
-E:\Code\C#\WPFSweeper\WPFSweeper\obj\Debug\net7.0-windows\WPFSweeper.AssemblyInfo.cs
 E:\Code\C#\WPFSweeper\WPFSweeper\obj\Debug\net7.0-windows\WPFSweeper.csproj.CoreCompileInputs.cache
 E:\Code\C#\WPFSweeper\WPFSweeper\obj\Debug\net7.0-windows\WPFSweeper.dll
 E:\Code\C#\WPFSweeper\WPFSweeper\obj\Debug\net7.0-windows\refint\WPFSweeper.dll

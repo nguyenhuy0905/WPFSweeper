@@ -1,5 +1,5 @@
 ﻿WPFSweeper
-1.0.0.0
+
 
 winexe
 C#
@@ -12,7 +12,7 @@ TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 E:\Code\C#\WPFSweeper\WPFSweeper\App.xaml
 11407045341
 
-28-544149359
+18433788740
 203-1312735065
 MainWindow.xaml;
 
