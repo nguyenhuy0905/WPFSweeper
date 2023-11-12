@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Threading;
 
 namespace WPFSweeper
 {
@@ -19,6 +20,18 @@ namespace WPFSweeper
         /// Skillissue counter
         /// </summary>
         public int Timer { get; private set; }
+
+        /// <summary>
+        /// Whether the player has started the game.
+        /// </summary>
+        public bool HasStarted { get; private set; }
+
+        /// <summary>
+        /// Whether the game is paused
+        /// </summary>
+        public bool IsPaused { get; private set; }
+
+        private DispatcherTimer timer { get; }
         
         /// <summary>
         /// Some difficulty selection. The values represent the <see cref="Grid.Height">Height</see> of the <see cref="Grid">Grid</see>.
