@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Automation.Peers;
+using System.Windows.Automation.Provider;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 
@@ -123,5 +125,9 @@ namespace WPFSweeper
             MineUnflagged,
             MineFlagged
         }
+
+        //I placed these two here so that they don't get garbage-collected. 
+        private static ButtonAutomationPeer? automation;
+        private static IInvokeProvider? invoker;
     }
 }

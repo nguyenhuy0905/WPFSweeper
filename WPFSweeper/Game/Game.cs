@@ -45,8 +45,9 @@ namespace WPFSweeper
         }
 
         /// <summary>
-        /// The <see cref="Grid">Grid</see> container
+        /// The <see cref="Grid">Grid</see> container. I don't have so much experience in MVVM/MVC or Dependency Injection, so this
+        /// is how I deal with such stuff.
         /// </summary>
-        private Grid grid { get; set; }
+        public static Grid grid { get; set; }
     }
 }

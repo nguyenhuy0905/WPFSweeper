@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Automation.Peers;
+using System.Windows.Automation.Provider;
+using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Media;
 
@@ -18,7 +21,7 @@ namespace WPFSweeper
         /// <param name="x">x-position of the cell</param>
         /// <param name="y">y-position of the cell</param>
         /// <param name="edge">The length of an edge of the cell</param>
-        /// <param name="type">The cell type. By default, this is NormalUnflagged</param>
+        /// <param name="type">The cell type. By default (when creating a new game), this is NormalUnflagged</param>
         public Cell(int x, int y, int edge, CellType type = CellType.NormalUnflagged)
         {
             //assigning instance values and the Click event
@@ -39,16 +42,16 @@ namespace WPFSweeper
         /// There are a few cases for the click:
         /// <list type="bullet">
         ///     <item>
-        ///         <term>If the Cell has mine</term>
-        ///         <description>You've got skillissue. Throw a loss message and escape the game</description>
+        ///         <term>If the cell is flagged or is already left-clicked</term>
+        ///         <description>Do nothing</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>The cell has mine</term>
+        ///         <description>Skillissue</description>
         ///     </item>
         ///     <item>
         ///         <term>If the cell has index 0</term>
         ///         <description>Open its neighboring cells also</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>If the cell is flagged</term>
-        ///         <description>Do nothing</description>
         ///     </item>
         ///     <item>
         ///         <term>If the cell has index from 1 to 7</term>
@@ -58,7 +61,29 @@ namespace WPFSweeper
         /// </remarks>
         private void LeftClick(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("left");
+            // doesn't do anything if flagged or is already clicked
+            if (this.IsFlagged || this.IsClicked) return;
+
+            this.IsClicked = true;
+            // the cell has mine and is not flagged
+            if (this.HasMine)
+            {
+                MessageBox.Show("SkillIssue");
+                return;
+            }
+            // if the cell has index 0
+            if (this.Index == 0)
+            {
+                foreach(Cell neighbor in Game.grid.GetNeighboringCells(this.X, this.Y))
+                {
+                    //TLDR: triggers the LeftClick event on the neighboring buttons
+                    automation = new(neighbor);
+                    invoker = (IInvokeProvider) automation.GetPattern(PatternInterface.Invoke);
+                    invoker.Invoke();
+                }
+                return;
+            }
+            this.Content = this.Index;
         }
 
         /// <summary>
@@ -70,7 +95,7 @@ namespace WPFSweeper
         /// </remarks>
         private void RightClick(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("right");
+            this.IsFlagged = !this.IsFlagged;
         }
 
         /// <summary>

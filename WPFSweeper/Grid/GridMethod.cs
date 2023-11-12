@@ -75,14 +75,39 @@ namespace WPFSweeper
                 addMine.Content = "*";
                 NumMine--;
 
-                //update his neighbors' indeces
-                List<Cell> neighbors = GetNeighboringCells(xMine, yMine);
+                UpdateNeighborsIndeces(xMine, yMine, true);
+            }
+        }
+
+        /// <summary>
+        /// Remove the mine at the specified location then subtract neighbors' indeces by 1.
+        /// If the cell doesn't have mine, just do nothing
+        /// </summary>
+        /// <param name="x">The mine's X-location</param>
+        /// <param name="y">The mine's Y-location</param>
+        private void RemoveMine(int x, int y)
+        {
+            if (!grid[x][y].HasMine) return;
+            grid[x][y].HasMine = false;
+            UpdateNeighborsIndeces(x, y, false);
+        }
+
+        /// <summary>
+        /// Increment or decrement the neighbors' indeces of the specified cell
+        /// </summary>
+        /// <remarks>
+        /// ONLY use for add/remove mine methods
+        /// </remarks>
+        /// <param name="x">The mine's X-location</param>
+        /// <param name="y">The mine's Y-location</param>
+        /// <param name="isAddingMine">Whether the game is trying to add mine (true) or remove (false)</param>
+        private void UpdateNeighborsIndeces(int x, int y, bool isAddingMine)
+        {
+                List<Cell> neighbors = GetNeighboringCells(x, y);
                 foreach (Cell neighbor in neighbors)
                 {
-                    neighbor.Index++;
-                    //if(!neighbor.HasMine) neighbor.Content = neighbor.Index;
+                    neighbor.Index += (isAddingMine) ? 1 : -1;
                 }
-            }
         }
         
         /// <summary>
@@ -107,7 +132,8 @@ namespace WPFSweeper
         }
         
         /// <summary>
-        /// Inspect whether the grid has any isolated island (a field of no-mine <see cref="Cell">Cells</see> surrounded entirely by mines.
+        /// Inspect whether the grid has any isolated island (a field of no-mine <see cref="Cell">Cells</see>
+        /// surrounded entirely by mines. If any of such area is located, move some mines away
         /// </summary>
         private void InspectGrid()
         {
