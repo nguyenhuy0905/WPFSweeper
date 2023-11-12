@@ -1,6 +1,7 @@
 # WPFSweeper
 > The new-and-improved Minesweepeer compared to an attempt I did in 2019. 
-> More features, more unnecessary documentations, more fun!
+More features, more unnecessary documentations, more fun!\
+
 Only run on Windows due to its framework.
 Compared to my [oldSweeper](https://github.com/nguyenhuy0905/old-sweeper), this one is a lot cleaner, kind of better documented, and has some more features.
 With some funny algorithms also.
