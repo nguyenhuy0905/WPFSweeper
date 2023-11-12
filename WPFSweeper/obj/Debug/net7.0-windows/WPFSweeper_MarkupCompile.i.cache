@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 E:\Code\C#\WPFSweeper\WPFSweeper\App.xaml
-11407045341
+2704905771
 
-18433788740
+19-3328443
 200-1644016952
-MainWindow.xaml;
+MainWindow.xaml;Popups\GameConfig.xaml;
 
-False
+True
 

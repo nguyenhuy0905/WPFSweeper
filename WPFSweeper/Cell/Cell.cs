@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Automation.Peers;
 using System.Windows.Automation.Provider;
 using System.Windows.Controls;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace WPFSweeper
@@ -76,7 +77,6 @@ namespace WPFSweeper
                 }
         }
 
-
         /// <summary>
         /// Path-finding, whether the cell has been checked
         /// </summary>
@@ -85,7 +85,16 @@ namespace WPFSweeper
         /// <summary>
         /// Whether the cell has been clicked by the player
         /// </summary>
-        public bool IsClicked { get; private set; }
+        private bool isClicked;
+
+        public bool IsClicked
+        {
+            get { return isClicked; }
+            set { 
+                isClicked = value;
+                if (value) this.Background = Brushes.LightGray;
+            }
+        }
 
         /// <summary>
         /// This cell's index

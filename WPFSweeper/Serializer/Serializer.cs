@@ -15,5 +15,12 @@ namespace WPFSweeper
     public class Serializer
     {       
         //TODO: Implement the serializer
+        private StreamWriter writer { get; set; }
+
+        public Serializer()
+        {
+            string filename = $"save_{DateTime.Now}";
+            
+        }
     }
 }

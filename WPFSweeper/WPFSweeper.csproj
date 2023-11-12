@@ -10,16 +10,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Saved Games\**" />
+    <EmbeddedResource Remove="Saved Games\**" />
+    <None Remove="Saved Games\**" />
+    <Page Remove="Saved Games\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Assets\Audio\cell_open.mp3" />
     <None Remove="Assets\Audio\cell_open.wav" />
     <None Remove="Assets\Audio\vine_boom.mp3" />
     <None Remove="Assets\Audio\vine_boom.wav" />
     <None Remove="Assets\Image\flag.png" />
     <None Remove="Assets\Image\mine.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Saved Games\" />
   </ItemGroup>
 
   <ItemGroup>

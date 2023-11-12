@@ -7,8 +7,18 @@
         mc:Ignorable="d"
         Title="WPFSweeper" Height="720" Width="1152"
         Background="LightBlue">
-    <Grid>
-        <TextBox Name="TimerClock"
+    <DockPanel>
+        <Menu DockPanel.Dock="Top" Background="LightGray">
+            <MenuItem Header="_File" BorderThickness="1">
+                <MenuItem Header="New">
+                    
+                </MenuItem>
+                <MenuItem Header="Continue">
+                    
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <TextBox Name="TimerClock" DockPanel.Dock="Top"
                  VerticalAlignment="Top" HorizontalAlignment="Center"
                  Height="50" Width="200"
                  Background="LightGray" Foreground="Black"
@@ -21,8 +31,10 @@
         <StackPanel x:Name="MainStackPanel" 
                     Orientation="Horizontal" 
                     Margin="152,60,40,40" >
-        
+            
+
         </StackPanel>
-    </Grid>
+        
+    </DockPanel>
     
 </Window>
