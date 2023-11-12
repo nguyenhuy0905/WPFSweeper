@@ -10,12 +10,7 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top" Background="LightGray">
             <MenuItem Header="_File" BorderThickness="1">
-                <MenuItem Header="New">
-                    
-                </MenuItem>
-                <MenuItem Header="Continue">
-                    
-                </MenuItem>
+                <MenuItem Name="menuNew" Header="New" Click="menuNew_Click"/>
             </MenuItem>
         </Menu>
         <TextBox Name="TimerClock" DockPanel.Dock="Top"

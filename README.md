@@ -47,13 +47,16 @@ in instead of the usual class. Just like playing a jigsaw.
 (started updating from Nov 11th)
 This is a general list of what I am going to do next:
 - [x] Add a timer
-- [ ] Implement win/loss and popup window
-- [ ] Format some methods to make them more test-able (by inserting different modules to it)
-- [ ] Make a custom dialog box so that users can choose new game's difficulty, or load a saved game
+- [ ] Change mine generation to start only after the user has clicked a cell
+- [ ] Implement win/loss conditions
+- [ ] Popup window after win/loss to show statistics
+- [x] Make a custom dialog box so that users can choose new game's difficulty, or load a saved game
 - [ ] Finish serializer and deserializer (so that I can test the next method listed here)
-- [ ] Implement the inspect grid method
+- [ ] Implement the inspect grid method to ensure all mine-less cells can be accessed through skill (not luck)
 - [ ] Make the interface look nicer
 - [ ] Optional: connect thru LAN
 ---
 ### *Fragen?*
 * I dunno, try to find my email and ask, if you can.
+* Or my Discord, I suppose. 
+* Or just say it's a "bug report".

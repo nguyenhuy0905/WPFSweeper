@@ -40,5 +40,13 @@ namespace WPFSweeper
             window = this;
             game = new Game(diff); 
         }
+
+        private void menuNew_Click(object sender, RoutedEventArgs e)
+        {
+            GameConfigs cfg = new GameConfigs();
+            cfg.Show();
+            game.CloseTimer();
+            this.Close();
+        }
     }
 }

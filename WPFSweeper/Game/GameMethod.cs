@@ -66,5 +66,10 @@ namespace WPFSweeper
             this.Timer++;
             window.TimerClock.Text = this.Timer.ToString();
         }
+
+        public void CloseTimer()
+        {
+            this.timer.Stop();
+        }
     }
 }
