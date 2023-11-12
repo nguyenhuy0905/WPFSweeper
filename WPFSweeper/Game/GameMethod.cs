@@ -18,9 +18,35 @@ namespace WPFSweeper
             timer.Start();
         }
 
+        /// <summary>
+        /// Triggered when a new game is started. A new game is started after the 
+        /// first left-click in one of the cells
+        /// <list type="number">
+        ///     <listheader>
+        ///         <term>What is done in this method:</term>
+        ///     </listheader>
+        ///     <item>
+        ///         <term>A mine-free area is created around the clicked cell</term>
+        ///     </item>
+        ///     <item>
+        ///         <term>Mines are distributed in cells other than the mine-free ones</term>
+        ///     </item>
+        ///     <item>
+        ///         <term>The grid is <seealso cref="Grid.InspectGrid">inspected</seealso> to ensure
+        ///         no enclosed area are present anymore</term>
+        ///     </item>
+        ///     <item>
+        ///         <term>The game begins. The timer starts to tick, some cells around the first
+        ///         clicked cell are opened if they are valid</term>
+        ///     </item>
+        /// </list>
+        /// </summary>
         public void Begin()
         {
-            //TODO: Now we start adding mines and all that stuff
+            /*
+             * TODO: Finish this Begin method
+             * 
+             */
         }
 
         /// <summary>

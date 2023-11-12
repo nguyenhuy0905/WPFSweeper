@@ -20,7 +20,11 @@ namespace WPFSweeper
     /// </summary>
     public partial class MainWindow : Window
     {
-        //TODO: Create a custom MessageBox controller that control difficulty of the game.
+        /*
+         * TODO: Create a custom MessageBox to customize difficulty of the new game.
+         * 
+         */
+        
         /// <summary>
         /// Quite literally some funky MVC,
         /// In the sense that, this window instance is always created already before anything else of this program ever calls it

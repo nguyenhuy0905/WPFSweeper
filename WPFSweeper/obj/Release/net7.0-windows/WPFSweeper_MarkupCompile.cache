@@ -1,20 +1,20 @@
 ﻿WPFSweeper
-1.0.0.0
+
 
 winexe
 C#
 .cs
-E:\Code\C#\WPFSweeper\WPFSweeper\obj\Debug\net7.0-windows\
+E:\Code\C#\WPFSweeper\WPFSweeper\obj\Release\net7.0-windows\
 WPFSweeper
 none
 false
-TRACE;DEBUG;NET;NET7_0;NETCOREAPP
+TRACE;RELEASE;NET;NET7_0;NETCOREAPP
 E:\Code\C#\WPFSweeper\WPFSweeper\App.xaml
 11407045341
 
-28-544149359
+231194111649
 203-1312735065
 MainWindow.xaml;
 
-False
+True
 
