@@ -18,8 +18,5 @@ E:\Code\C#\WPFSweeper\WPFSweeper\obj\Debug\net7.0-windows\WPFSweeper.genruntimec
 E:\Code\C#\WPFSweeper\WPFSweeper\obj\Debug\net7.0-windows\ref\WPFSweeper.dll
 E:\Code\C#\WPFSweeper\WPFSweeper\bin\Debug\net7.0-windows\Microsoft.Extensions.DependencyInjection.dll
 E:\Code\C#\WPFSweeper\WPFSweeper\bin\Debug\net7.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-E:\Code\C#\WPFSweeper\WPFSweeper\bin\Debug\net7.0-windows\xunit.abstractions.dll
-E:\Code\C#\WPFSweeper\WPFSweeper\bin\Debug\net7.0-windows\xunit.assert.dll
-E:\Code\C#\WPFSweeper\WPFSweeper\bin\Debug\net7.0-windows\xunit.core.dll
 E:\Code\C#\WPFSweeper\WPFSweeper\obj\Debug\net7.0-windows\WPFSweeper.csproj.AssemblyReference.cache
 E:\Code\C#\WPFSweeper\WPFSweeper\obj\Debug\net7.0-windows\WPFSweeper.csproj.CopyComplete
