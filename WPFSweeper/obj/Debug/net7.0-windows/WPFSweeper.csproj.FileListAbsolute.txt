@@ -20,3 +20,5 @@ E:\Code\C#\WPFSweeper\WPFSweeper\bin\Debug\net7.0-windows\Microsoft.Extensions.D
 E:\Code\C#\WPFSweeper\WPFSweeper\bin\Debug\net7.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 E:\Code\C#\WPFSweeper\WPFSweeper\obj\Debug\net7.0-windows\WPFSweeper.csproj.AssemblyReference.cache
 E:\Code\C#\WPFSweeper\WPFSweeper\obj\Debug\net7.0-windows\WPFSweeper.csproj.CopyComplete
+E:\Code\C#\WPFSweeper\WPFSweeper\obj\Debug\net7.0-windows\GameConfigs.g.cs
+E:\Code\C#\WPFSweeper\WPFSweeper\obj\Debug\net7.0-windows\GameConfigs.baml

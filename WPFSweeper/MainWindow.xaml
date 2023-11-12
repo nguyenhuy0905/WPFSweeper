@@ -30,7 +30,7 @@
         </TextBox>
         <StackPanel x:Name="MainStackPanel" 
                     Orientation="Horizontal" 
-                    Margin="152,60,40,40" >
+                    Margin="10">
             
 
         </StackPanel>

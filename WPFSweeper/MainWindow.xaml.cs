@@ -30,15 +30,15 @@ namespace WPFSweeper
         /// In the sense that, this window instance is always created already before anything else of this program ever calls it
         /// </summary>
 #pragma warning disable
-        public static MainWindow window { get; private set; }
+        public static MainWindow window { get; set; }
 #pragma warning restore
         private Game game { get; set; }
 
-        public MainWindow()
+        public MainWindow(Difficulty diff)
         {
             InitializeComponent();
             window = this;
-            game = new Game(Difficulty.Easy); 
+            game = new Game(diff); 
         }
     }
 }
