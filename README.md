@@ -18,7 +18,7 @@ to be safe if you don't know what's going on (just like me)).
 4. Clone the project into your device.
 5. Have fun! *Viel spaﬂ!*
 ### Context
-==Why did I start this?==
+#### Why did I start this?
 * I wanted to code more. I finish school labs in like 3-4 hours, aka, each week I only have 3-4 hours of coding
 hadn't I started this project.
 * So that I have place to use C#. I have yet to learn so much about game-making, and I am quite afraid of
@@ -31,6 +31,8 @@ I still feel inside me the need to write looooooong documentations.
 valid, look extremely clunky. Also, DP will allow me to test everything much more easily; write a test class, and plug that
 in instead of the usual class. Just like playing a jigsaw.
 * Write this on a different, cross-platform framework. I am thinking something like MAUI.
+==Why the random German sentences here and there?==
+* Man, I'm trying to learn the language. *Ich kann gute Deutsche nicht.*
 ---
 ### The funny algorithms (to be) used
 * Breadth First Search to open an area after the player clicks on the board for the first time.
