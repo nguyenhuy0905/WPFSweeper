@@ -72,7 +72,7 @@ namespace WPFSweeper
 
                 //add mine
                 addMine.HasMine = true;
-                addMine.Content = "*";
+                //addMine.Content = "*";
                 NumMine--;
 
                 UpdateNeighborsIndeces(xMine, yMine, true);

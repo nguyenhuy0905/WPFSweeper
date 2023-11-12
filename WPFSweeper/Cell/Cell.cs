@@ -66,12 +66,10 @@ namespace WPFSweeper
             get { return isFlagged; }
             set { 
                 isFlagged = value;
-                if(value) this.Content = new Image()
+                if (value) this.Content = new Image()
                 {
-                    Source = new BitmapImage()
-                    {
-                        UriSource = new Uri(@"pack://application:,,,/WPFSweeper;Assets/Image/mine.png")
-                    }
+                    Source = new BitmapImage(new Uri(@"../Assets/Image/flag.png", UriKind.Relative)),
+                    Stretch = Stretch.Fill
                 };
                 if (!value) this.Content = "";
                 }

@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Automation.Peers;
 using System.Windows.Automation.Provider;
+using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace WPFSweeper
 {
@@ -68,6 +70,10 @@ namespace WPFSweeper
             // the cell has mine and is not flagged
             if (this.HasMine)
             {
+                this.Content = new Image() {
+                    Source = new BitmapImage(new Uri(@"../Assets/Image/mine.png", UriKind.Relative)),
+                    Stretch = Stretch.Fill
+                };
                 MessageBox.Show("SkillIssue");
                 return;
             }
