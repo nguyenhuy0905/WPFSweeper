@@ -1,6 +1,6 @@
 # WPFSweeper
 > The new-and-improved Minesweepeer compared to an attempt I did in 2019. 
-More features, more unnecessary documentations, more fun!\
+More features, more unnecessary documentations, more fun!
 
 Only run on Windows due to its framework.
 Compared to my [oldSweeper](https://github.com/nguyenhuy0905/old-sweeper), this one is a lot cleaner, kind of better documented, and has some more features.
@@ -33,6 +33,9 @@ I still feel inside me the need to write ~~looooooong~~ helpful documentations.
 valid, look extremely clunky. Also, DP will allow me to test everything much more easily; write a test class, and plug that
 in instead of the usual class. Just like playing a jigsaw.
 * Write this on a different, cross-platform framework. I am thinking something like MAUI.
+* Improve memory usage, if that's possible. Something like using the mouse's position instead of creating hundreds of buttons. But that
+would require a complete overhaul of the codes for the Cell class, and consequently all logics of other classes that have relations to this
+class.
 #### Why the random German sentences here and there?
 * Man, I'm trying to learn the language. *Ich kann gute Deutsche nicht.*
 ---
@@ -43,6 +46,8 @@ in instead of the usual class. Just like playing a jigsaw.
 ### Notes
 * Some of my old commits are outdated
 * I don't use a graph node method anymore, though one commit said I do. This is replaced by Breadth-First Search.
+* This is not a well-optimized game. My testing shows it can grab up to 140MB of RAM (for such a simple game). This is not unexplanable
+though. For the highest difficulty, it's like 640 Button objects being created. 
 ### TODOs:
 (started updating from Nov 11th)
 This is a general list of what I am going to do next:

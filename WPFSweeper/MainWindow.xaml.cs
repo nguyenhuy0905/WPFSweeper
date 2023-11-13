@@ -43,8 +43,9 @@ namespace WPFSweeper
 
         private void menuNew_Click(object sender, RoutedEventArgs e)
         {
-            GameConfigs cfg = new GameConfigs();
+            GameConfigs cfg = new();
             cfg.Show();
+            //the timer thread is still running at this point, so we should close it.
             game.CloseTimer();
             this.Close();
         }

@@ -79,12 +79,12 @@ namespace WPFSweeper
         /// Path-finding, whether the cell has been checked
         /// </summary>
         public bool IsChecked { get; set; }
+        
+        private bool isClicked;
 
         /// <summary>
         /// Whether the cell has been clicked by the player
         /// </summary>
-        private bool isClicked;
-
         public bool IsClicked
         {
             get { return isClicked; }
@@ -134,7 +134,14 @@ namespace WPFSweeper
         }
 
         //I placed these two here so that they don't get garbage-collected. 
+        /// <summary>
+        /// Used to grab a different cell's event
+        /// </summary>
         private static ButtonAutomationPeer? automation;
+
+        /// <summary>
+        /// Used to trigger the event grabbed by <seealso cref="automation">automator</seealso>
+        /// </summary>
         private static IInvokeProvider? invoker;
     }
 }
