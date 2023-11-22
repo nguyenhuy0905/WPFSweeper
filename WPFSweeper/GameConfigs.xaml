@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WPFSweeper"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="Configure Game" Height="200" Width="400">
+        Title="Configure Game" Height="250" Width="400">
     <Window.Resources>
         <Style TargetType="Label">
             <Setter Property="Margin" Value="25,10,25,10"/>
@@ -34,7 +34,7 @@
             Load Saved
         </Label>
         <!--Difficulty selection ComboBox-->
-        <ComboBox Name="cmbDifficulty" Grid.Column="1" Margin="25,10,21,10" SelectedIndex="0">
+        <ComboBox Name="cmbDifficulty" Grid.Column="1" Margin="25,10,21,10" SelectedIndex="0" VerticalContentAlignment="Center">
             <ComboBoxItem Content="Easy"/>
             <ComboBoxItem Content="Medium"/>
             <ComboBoxItem Content="Hard"/>
