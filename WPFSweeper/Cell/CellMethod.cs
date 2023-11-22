@@ -30,11 +30,39 @@ namespace WPFSweeper
             this.X = x;
             this.Y = y;
             this.Index = 0;
+            this.cellType = type;
             SetProperties(type);
             this.IsChecked = false;
             this.Width = this.Height = edge;
             this.Click += LeftClick;
             this.MouseRightButtonDown += RightClick;
+        }
+        /// <summary>
+        /// This gets called after each time one of HasMine, IsFlagged or IsClicked changes
+        /// </summary>
+        internal void UpdateCellType()
+        {
+            if (this.IsClicked)
+            {
+                this.cellType = CellType.Clicked;
+                return;
+            }
+            if (this.HasMine)
+            {
+                if (this.IsFlagged)
+                {
+                    this.cellType = CellType.MineFlagged;
+                    return;
+                }
+                this.cellType = CellType.MineUnflagged;
+                return;
+            }
+            if(this.IsFlagged)
+            {
+                this.cellType = CellType.NormalFlagged;
+                return;
+            }
+            this.cellType = CellType.NormalUnflagged;
         }
 
         /// <summary>
@@ -80,7 +108,7 @@ namespace WPFSweeper
             // if the cell has index 0
             if (this.Index == 0)
             {
-                foreach(Cell neighbor in Game.grid.GetNeighboringCells(this.X, this.Y))
+                foreach(Cell neighbor in window.game.grid.GetNeighboringCells(this.X, this.Y))
                 {
                     //TLDR: triggers the LeftClick event on the neighboring buttons
                     automation = new(neighbor);
@@ -102,6 +130,7 @@ namespace WPFSweeper
         private void RightClick(object sender, RoutedEventArgs e)
         {
             this.IsFlagged = !this.IsFlagged;
+            UpdateCellType();
         }
 
         /// <summary>

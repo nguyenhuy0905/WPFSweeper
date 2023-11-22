@@ -20,7 +20,7 @@ namespace WPFSweeper
         /// <summary>
         /// The <see cref="Grid">Grid</see> itself
         /// </summary>
-        private Cell[][] grid { get; set; }
+        public Cell[][] grid { get; private set; }
 
         /// <summary>
         /// Width of the <see cref="Grid">Grid</see>. Equals 1.6 * Height

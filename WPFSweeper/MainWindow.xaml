@@ -11,6 +11,7 @@
         <Menu DockPanel.Dock="Top" Background="LightGray">
             <MenuItem Header="_File" BorderThickness="1">
                 <MenuItem Name="menuNew" Header="New" Click="menuNew_Click"/>
+                <MenuItem Name="menuSave" Header="Save Game" Click="menuSave_Click"/>
             </MenuItem>
         </Menu>
         <TextBox Name="TimerClock" DockPanel.Dock="Top"

@@ -35,7 +35,7 @@ in instead of the usual class. Just like playing a jigsaw.
 * Write this on a different, cross-platform framework. I am thinking something like MAUI.
 * Improve memory usage, if that's possible. Something like using the mouse's position instead of creating hundreds of buttons. But that
 would require a complete overhaul of the codes for the Cell class, and consequently all logics of other classes that have relations to this
-class.
+class. (edit: after some looking-up, it seems like the huge initial memory grab is just how C# works. The memory scales little with the size of the program).
 #### Why the random German sentences here and there?
 * Man, I'm trying to learn the language. *Ich kann gute Deutsche nicht.*
 ---

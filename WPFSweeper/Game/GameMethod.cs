@@ -12,6 +12,7 @@ namespace WPFSweeper
         {
             Timer = 0;
             grid = new Grid(difficulty);
+            this.difficulty = difficulty;
             timer = new();
             timer.Interval = new TimeSpan(0, 0, 1);
             timer.Tick += UpdateTimer;

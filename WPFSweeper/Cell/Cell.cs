@@ -54,6 +54,7 @@ namespace WPFSweeper
             get { return hasMine; }
             internal set { 
                 hasMine = value;
+                UpdateCellType();
             }
         }
 
@@ -72,6 +73,7 @@ namespace WPFSweeper
                     Stretch = Stretch.Fill
                 };
                 if (!value) this.Content = "";
+                UpdateCellType();
                 }
         }
 
@@ -88,9 +90,11 @@ namespace WPFSweeper
         public bool IsClicked
         {
             get { return isClicked; }
-            set { 
+            set {
+                if (isClicked) return;
                 isClicked = value;
                 if (value) this.Background = Brushes.LightGray;
+                UpdateCellType();
             }
         }
 
@@ -132,6 +136,8 @@ namespace WPFSweeper
             MineUnflagged,
             MineFlagged
         }
+
+        public CellType cellType { get; private set; }
 
         //I placed these two here so that they don't get garbage-collected. 
         /// <summary>

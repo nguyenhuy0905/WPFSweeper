@@ -31,6 +31,8 @@ namespace WPFSweeper
         /// </summary>
         public bool IsPaused { get; private set; }
 
+        public Difficulty difficulty { get; private set; }
+
         private DispatcherTimer timer { get; }
         
         /// <summary>
@@ -61,6 +63,6 @@ namespace WPFSweeper
         /// The <see cref="Grid">Grid</see> container. I don't have so much experience in MVVM/MVC or Dependency Injection, so this
         /// is how I deal with such stuff.
         /// </summary>
-        public static Grid grid { get; set; }
+        public Grid grid { get; private set; }
     }
 }
