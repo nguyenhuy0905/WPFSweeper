@@ -11,6 +11,7 @@ namespace WPFSweeper
     /// <summary>
     /// Saves the current game into a text file.
     /// At first I decided to save as a .json file, but, why so complicated anyways
+    /// NOTE: I let total access to the text file saved. If you don't wanna break the game, please don't try to edit it
     /// </summary>
     public class Serializer
     {       
@@ -49,7 +50,9 @@ namespace WPFSweeper
                 }
                 writer.WriteLine(rowData);
             }
+            // guillotine the writer
             writer.Close();
+            writer.Dispose();
         }
     }
 }

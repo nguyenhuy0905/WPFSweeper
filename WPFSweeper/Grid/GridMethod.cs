@@ -12,20 +12,32 @@ namespace WPFSweeper
     public partial class Grid
     {
         /// <summary>
-        /// Sets up a grid
+        /// Sets up a new grid
         /// </summary>
-        /// <param name="difficulty">The difficulty of the <see cref="Game">Game</see></param>
-        public Grid(Difficulty difficulty)
+        /// <param name="difficulty">The <see cref="Difficulty">Difficulty</see> of the <see cref="Game">Game</see></param>
+        public Grid(Difficulty difficulty) : this(difficulty, null) { }
+
+        /// <summary>
+        /// Load a saved grid
+        /// </summary>
+        /// <param name="difficulty">The <see cref="Difficulty">Difficulty</see> of the <see cref="Game">Game</see></param>
+        /// <param name="cells">The saved grid</param>
+        public Grid(Difficulty difficulty, Cell[][]? cells)
         {
-            //TODO: Finish Grid constructor
             //16 : 10 grid
             this.Width = (int)difficulty * 8/5;
             this.Height = (int)difficulty;
             //1 in 4 cells has mine
             this.NumMine = Width * Height / 4;
-            this.grid = new Cell[Width][];
-            PopulateGrid();
-            AddMines();
+            //initialize, or load, the grid
+            if(cells == null)
+            {
+                this.grid = new Cell[Width][];
+                PopulateGrid();
+                AddMines();
+                return;
+            }
+            this.grid = cells;
         }
 
         /// <summary>
@@ -53,7 +65,7 @@ namespace WPFSweeper
                 window.MainStackPanel.Children.Add(panel);
             }
         }
-
+        
         /// <summary>
         /// Start adding mines to the <see cref="Grid">Grid</see>
         /// </summary>

@@ -8,11 +8,22 @@ namespace WPFSweeper
 {
     public partial class Game
     {
-        public Game(Difficulty difficulty)
+        /// <summary>
+        /// Start a new adventure!!! i mean new game
+        /// </summary>
+        /// <param name="difficulty">The <see cref="Difficulty">Difficulty</see> of the game</param>
+        public Game(Difficulty difficulty) : this(difficulty, null, 0) { }
+
+        /// <summary>
+        /// Load a saved game
+        /// </summary>
+        /// <param name="difficulty"></param>
+        /// <param name="grid"></param>
+        /// <param name="timePassed"></param>
+        public Game(Difficulty difficulty, Cell[][]? cells, int timePassed)
         {
-            Timer = 0;
-            grid = new Grid(difficulty);
-            this.difficulty = difficulty;
+            Timer = timePassed;
+            this.grid = new Grid(difficulty, cells);
             timer = new();
             timer.Interval = new TimeSpan(0, 0, 1);
             timer.Tick += UpdateTimer;
