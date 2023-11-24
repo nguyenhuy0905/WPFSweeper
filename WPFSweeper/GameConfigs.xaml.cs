@@ -79,8 +79,7 @@ namespace WPFSweeper
             {
                 string path = ofd.FileName;
                 Deserializer deserializer = new(path);
-                window = deserializer.Deserialize();
-                window.Show();
+                deserializer.Deserialize();
                 this.Close();
             }
             

@@ -85,6 +85,14 @@ namespace WPFSweeper
                 }
                 window.MainStackPanel.Children.Add(panel);
             }
+
+            for(int x = 0; x < this.Width; x++)
+            {
+                for(int y = 0; y < this.Height; y++)
+                {
+                    if (this.grid[x][y].IsClicked) this.grid[x][y].Content = this.grid[x][y].Index;
+                }
+            }
         }
         
         /// <summary>

@@ -147,8 +147,6 @@ namespace WPFSweeper
             {
                 case CellType.Clicked:
                     this.IsClicked = true;
-                    this.Content = this.Index;
-                    this.Background = Brushes.Aqua;
                     break;
                 case CellType.MineUnflagged:
                     this.HasMine = true;
@@ -159,7 +157,6 @@ namespace WPFSweeper
                     goto case CellType.MineUnflagged;
                 case CellType.NormalFlagged:
                     this.IsFlagged = true;
-                    this.Background= Brushes.Aquamarine;
                     break;
                 default:
                     break;

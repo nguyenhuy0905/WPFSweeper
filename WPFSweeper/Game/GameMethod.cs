@@ -68,6 +68,7 @@ namespace WPFSweeper
         public void Continue()
         {
             this.grid.PopulateSavedGrid();
+
         }
 
         /// <summary>

@@ -36,6 +36,7 @@ in instead of the usual class. Just like playing a jigsaw.
 * Improve memory usage, if that's possible. Something like using the mouse's position instead of creating hundreds of buttons. But that
 would require a complete overhaul of the codes for the Cell class, and consequently all logics of other classes that have relations to this
 class. (edit: after some looking-up, it seems like the huge initial memory grab is just how C# works. The memory scales little with the size of the program).
+* *UPDATE* The memory hogging becomes worse now. Wow.
 #### Why the random German sentences here and there?
 * Man, I'm trying to learn the language. *Ich kann gute Deutsche nicht.*
 ---
@@ -56,7 +57,7 @@ This is a general list of what I am going to do next:
 - [ ] Implement win/loss conditions
 - [ ] Popup window after win/loss to show statistics
 - [x] Make a custom dialog box so that users can choose new game's difficulty, or load a saved game
-- [ ] Finish serializer and deserializer (so that I can test the next method listed here)
+- [x] Finish serializer and deserializer (so that I can test the next method listed here)
 - [ ] Implement the inspect grid method to ensure all mine-less cells can be accessed through skill (not luck)
 - [ ] Make the interface look nicer
 - [ ] Optional: connect thru LAN

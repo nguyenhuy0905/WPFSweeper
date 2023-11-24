@@ -93,7 +93,9 @@ namespace WPFSweeper
             set {
                 if (isClicked) return;
                 isClicked = value;
-                if (value) this.Background = Brushes.LightGray;
+                if (value) {
+                    this.Background = Brushes.LightGray;
+                }               
                 UpdateCellType();
             }
         }

@@ -17,7 +17,7 @@ namespace WPFSweeper
             reader = new StreamReader(path);
         }
 
-        public MainWindow Deserialize()
+        public void Deserialize()
         {
 #pragma warning disable
             // ReadLine is 100% not null here, unless you somehow disobey me and play with the save text file, which a null reference exception is probably thrown at you
@@ -55,7 +55,6 @@ namespace WPFSweeper
             reader.Close();
             window = new MainWindow(new Game(difficulty, cells, timer));
             window.Show();
-            return window;
         }
     }
 }
