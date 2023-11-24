@@ -65,6 +65,26 @@ namespace WPFSweeper
                 window.MainStackPanel.Children.Add(panel);
             }
         }
+
+        /// <summary>
+        /// This exists just because of how clunky my application parts are linked together. This will be called after the deserializer has finished its job
+        /// </summary>
+        internal void PopulateSavedGrid()
+        {
+            for(int x = 0; x < this.Width; x++)
+            {
+                StackPanel panel = new()
+                {
+                    Width = 960 / this.Width - 2,
+                    Orientation = Orientation.Vertical
+                };
+                foreach(Cell cell in this.grid[x])
+                {
+                    panel.Children.Add(cell);
+                }
+                window.MainStackPanel.Children.Add(panel);
+            }
+        }
         
         /// <summary>
         /// Start adding mines to the <see cref="Grid">Grid</see>

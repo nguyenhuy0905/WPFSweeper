@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -56,8 +57,7 @@ namespace WPFSweeper
                     diff = Difficulty.Hard;
                     break;
             }
-            
-            window = new MainWindow(diff);
+            window = new MainWindow(new Game(diff));
             window.Show();
             this.Close();
         }
@@ -68,7 +68,21 @@ namespace WPFSweeper
         private void LoadSavedGame(object sender, RoutedEventArgs e)
         {
             //TODO: Implement save method
-            throw new NotImplementedException();
+            string dir = Directory.GetCurrentDirectory();
+            OpenFileDialog ofd = new()
+            {
+                InitialDirectory = dir,
+            };
+            var dialogResult = ofd.ShowDialog();
+            if (dialogResult == true)
+            {
+                string path = ofd.FileName;
+                Deserializer deserializer = new(path);
+                window = deserializer.Deserialize();
+                window.Show();
+                this.Close();
+            }
+            
         }
     }
 }

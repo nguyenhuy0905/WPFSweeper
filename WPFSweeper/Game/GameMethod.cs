@@ -66,7 +66,7 @@ namespace WPFSweeper
         /// </summary>
         public void Continue()
         {
-            //TODO: Implement function to continue a saved/game.
+            this.grid.PopulateSavedGrid();
         }
 
         /// <summary>

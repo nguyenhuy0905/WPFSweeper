@@ -10,13 +10,13 @@ namespace WPFSweeper
     {
         private StreamReader reader { get; set; }
 
-        public Deserializer() 
+        public Deserializer(string path) 
         {
             // dummy placed here. Maybe the test project should not have existed
-            reader = new StreamReader($"{Directory.GetCurrentDirectory()}/../../../Saves/save_1.txt");
+            reader = new StreamReader(path);
         }
 
-        public void Deserialize()
+        public MainWindow Deserialize()
         {
 #pragma warning disable
             // ReadLine is 100% not null here, unless you somehow disobey me and play with the save text file, which a null reference exception is probably thrown at you
@@ -27,22 +27,33 @@ namespace WPFSweeper
 #pragma warning restore
             // reading grid data
             string? rowData = reader.ReadLine();
+            // fill up the grid
             Cell[][] cells = new Cell[(int)difficulty * 8 / 5][];
-            int r = 0;
+            for(int i = 0; i < cells.Length; i++)
+            {
+                cells[i] = new Cell[(int)difficulty];
+            }
+            int c = 0;
             while(rowData is not null)
             {
                 string[] cellState = rowData.Split(' ');
-                cells[r] = new Cell[(int)difficulty];
-                if (cellState.Length != cells[r].Length) throw new Exception("Error, saved file either corrupted or has been modified");
-                for(int i = 0; i < cells[r].Length; i++)
+                if (cellState.Length != cells.Length) throw new Exception("Something wrong (about the save file), I can feel it");
+                CellType type;
+                for(int x = 0; x < cellState.Length; x++)
                 {
-                    Enum.TryParse(cellState[i], out CellType type);
-                    cells[r][i] = new Cell(r, i, 960 /((int) difficulty * 8 / 5) - 2, type); 
+                    Enum.TryParse(cellState[x], out type);
+                    cells[x][c] = new Cell(x, c, 960 / ((int)difficulty * 8 / 5) - 2, type);
                 }
-                r++;
+                c++;
                 rowData = reader.ReadLine();
             }
+            
             // create a new game and start
+            reader.Dispose();
+            reader.Close();
+            window = new MainWindow(new Game(difficulty, cells, timer));
+            window.Show();
+            return window;
         }
     }
 }

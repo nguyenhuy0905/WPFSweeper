@@ -45,8 +45,4 @@
     </Resource>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Saves\" />
-  </ItemGroup>
-
 </Project>
