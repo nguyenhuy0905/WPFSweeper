@@ -57,7 +57,7 @@ namespace WPFSweeper
                     diff = Difficulty.Hard;
                     break;
             }
-            window = new MainWindow(new Game(diff));
+            window = new MainWindow(diff);
             window.Show();
             this.Close();
         }

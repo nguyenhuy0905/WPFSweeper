@@ -81,6 +81,7 @@ namespace WPFSweeper
                 foreach(Cell cell in this.grid[x])
                 {
                     panel.Children.Add(cell);
+                    if(cell.HasMine) UpdateNeighborsIndeces(cell.X, cell.Y, true);
                 }
                 window.MainStackPanel.Children.Add(panel);
             }

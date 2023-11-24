@@ -37,9 +37,10 @@ namespace WPFSweeper
             while(rowData is not null)
             {
                 string[] cellState = rowData.Split(' ');
-                if (cellState.Length != cells.Length) throw new Exception("Something wrong (about the save file), I can feel it");
+                // to avoid the space at the end of each save file, which caused the last digit of cellstate to be ""
+                if (cellState.Length - 1 != cells.Length) throw new Exception("Something wrong (about the save file), I can feel it");
                 CellType type;
-                for(int x = 0; x < cellState.Length; x++)
+                for(int x = 0; x < cellState.Length - 1; x++)
                 {
                     Enum.TryParse(cellState[x], out type);
                     cells[x][c] = new Cell(x, c, 960 / ((int)difficulty * 8 / 5) - 2, type);

@@ -37,7 +37,7 @@ namespace WPFSweeper
 
             //write into file
             writer.WriteLine(timePassed);            
-            writer.WriteLine(difficulty.ToString());
+            writer.WriteLine(difficulty.ToString("G"));
 
             //write cell infos into file
             for(int col = 0; col < grid.Height; col++)
