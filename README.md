@@ -6,6 +6,13 @@ Only run on Windows due to its framework.
 Compared to my [oldSweeper](https://github.com/nguyenhuy0905/old-sweeper), this one is a lot cleaner, kind of better documented, and has some more features.
 With some funny algorithms also.
 
+### UPDATE: FAILED PROJECT
+* I declared that, this project is a fail project of mine, at least a pretty spectacular fail of mine. I had it planned pretty detailed before even starting this repo. While I hate the ending myself, but it started with an alright scene.
+#### Proposed improvements:
+* Dependency injection: solves the issue of possibly null-MainWindow (that I met a couple times during this, had to rewrite a bunch of code). Also allows me to write "dummy classes" before "real" classes to test each class separately before moving to writing the next class.
+* Database: it is not the safest, but safer still, way to save a currently running game.
+* Docker or another, non-platform-dependent framework: avoids compatibility issues. This current project only runs on Windows machines that has .NET 7.0 installed, and only properly test-able on Visual Studios and maybe its JetBrains equivalent.
+
 ---
 ### How-to: test and edit source code
 I feel like I need to write this because of the framework I use. While you can try something different, this is what I am using
@@ -18,7 +25,7 @@ but to be safe, use Windows 10/11). If I recall correctly, Visual Studio now onl
 find and select **.NET 7.0 Runtime** (I guess if you have already downloaded the path, then you don't need to do this, but just
 to be safe if you don't know what's going on (just like me)).
 4. Clone the project into your device.
-5. Have fun! *Viel spaﬂ!*
+5. Have fun! *Viel spa√ü!*
 ### Context
 #### Why did I start this?
 * I wanted to code more. I finish school labs in like 3-4 hours, aka, each week I only have 3-4 hours of coding
